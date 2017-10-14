@@ -8,3 +8,4 @@ from sklearn.preprocessing import Imputer
 imputer = Imputer(missing_values = 'NaN', axis = 0, strategy = 'mean')
 imputer = imputer.fit(train[:, 1:3])
 train[:, 1:3] = imputer.transform(train[:, 1:3])
+print(train)
