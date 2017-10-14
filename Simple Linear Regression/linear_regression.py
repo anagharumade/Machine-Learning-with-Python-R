@@ -29,3 +29,13 @@ regressor = regressor.fit(X_train, Y_train)
 y_pred = regressor.predict(X_test)
 
 #Plotting the actual vs. predicted data
+plt.scatter(X_test, Y_test, color = 'blue')
+plt.scatter(X_test, y_pred, color = 'red')
+
+# Plotting the regression line on the training dataset
+plt.scatter(X_train, Y_train, color = 'blue')
+plt.plot(X_train, regressor.predict(X_train), color = 'red')
+
+#Plotting the actual values which should have been plotted against the regression line
+plt.scatter(X_test, Y_test, color = 'blue')
+plt.plot(X_train, regressor.predict(X_train), color = 'red')
