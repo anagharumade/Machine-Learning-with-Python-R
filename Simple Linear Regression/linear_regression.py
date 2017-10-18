@@ -11,8 +11,8 @@ import numpy as np
 
 data = pd.read_csv('Salary_Data.csv')
 
-X = data.iloc[:, -1].values
-Y = data.iloc[:, 0].values
+X = data.iloc[:, 0].values
+Y = data.iloc[:, 1].values
 X = X.reshape((30,1))
 Y = Y.reshape((30,1))
 
@@ -31,11 +31,18 @@ y_pred = regressor.predict(X_test)
 #Plotting the actual vs. predicted data
 plt.scatter(X_test, Y_test, color = 'blue')
 plt.scatter(X_test, y_pred, color = 'red')
+plt.title('actual(blue) vs. predicted(red) data')
+plt.xlabel('Years of experience')
+plt.ylabel('Salary')
 
 # Plotting the regression line on the training dataset
 plt.scatter(X_train, Y_train, color = 'blue')
 plt.plot(X_train, regressor.predict(X_train), color = 'red')
+plt.title('Regression line')
 
 #Plotting the actual values which should have been plotted against the regression line
 plt.scatter(X_test, Y_test, color = 'blue')
 plt.plot(X_train, regressor.predict(X_train), color = 'red')
+plt.title('Actual values against regression line')
+
+#Overall a good model
